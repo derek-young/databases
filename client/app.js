@@ -66,7 +66,6 @@ $(document).ready(function() {
       contentType: 'application/json',
       success: function (data) {
         this.fetch();
-        console.log('chatterbox: Message sent');
       }.bind(this),
       error: function (data) {
         // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
@@ -86,7 +85,7 @@ $(document).ready(function() {
       success: function (response) {
         var data = JSON.parse(response);
         this.clearMessages();
-        for (var i = data.length - 1; i >= 0; i--) {
+        for (var i = 0; i < data.length; i++) {
           if (room === 'All' || this.escapeHtml(data[i].room) === room) {
             this.renderMessage(data[i]);
           }

@@ -15,11 +15,6 @@ var users = sequelize.define('users', {
 });
 
 var messages = sequelize.define('messages', {
-  // user: {
-  //   type: Sequelize.STRING,
-  //   model: 'users',
-  //   key: 'name'
-  // },
   message: Sequelize.STRING,
   room: Sequelize.STRING
 });
